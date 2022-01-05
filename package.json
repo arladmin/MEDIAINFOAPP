@@ -1,0 +1,26 @@
+{
+  "name": "mediainfoapp",
+  "version": "1.0.0",
+  "description": "Node.js ffprobe API Library to Get Information of Media Video MP4 & Audio Files as JSON Object in Command Line Using Javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "mediainfoapp"
+  },
+  "keywords": [
+    "javascript",
+    "ffprobe"
+  ],
+  "author": "Dair Sanchez",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.6"
+  },
+  "dependencies": {
+    "ffprobe": "^1.1.2"
+  }
+}
