@@ -33,6 +33,7 @@ app.post("/mediainfo", upload.single("file"), (req, res) => {
   ffprobe(req.file.path, { path: ffprobeStatic.path }, (err, info) => {
     if (err) {
       console.log(err);
+      res.sendFile(__dirname+"/Error.html")
     } else {
       console.log(info);
       res.json({ info });
