@@ -4,8 +4,14 @@ const express = require("express");
 const multer = require("multer");
 const path = require("path");
 const bodyparser = require("body-parser");
+const basicAuth = require('express-basic-auth');
 
 const app = express();
+app.use(basicAuth({
+    users: { admin: process.env.PASSWORD },
+    challenge: true // <--- needed to actually show the login dialog!
+}));
+
 app.use(express.static(path.join(__dirname + "/uploads")));
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
