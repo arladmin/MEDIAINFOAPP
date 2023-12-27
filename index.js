@@ -5,6 +5,12 @@ const multer = require("multer");
 const path = require("path");
 const bodyparser = require("body-parser");
 const basicAuth = require('express-basic-auth');
+const fs = require('fs');
+const dir = '/uploads';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 
 const app = express();
 app.use(basicAuth({
@@ -44,6 +50,7 @@ app.post("/mediainfo", upload.single("file"), (req, res) => {
       console.log(info);
       res.json({ info });
     }
+      
   });
 });
 app.listen(5000, () => {
